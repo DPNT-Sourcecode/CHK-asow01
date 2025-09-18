@@ -244,7 +244,3 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH");
 	}
 }
-
-
-
-
