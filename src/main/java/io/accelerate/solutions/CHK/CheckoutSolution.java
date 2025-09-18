@@ -78,12 +78,6 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("EEEEEB");
+		new CheckoutSolution().checkout("EEBB");
 	}
 }
-
-
-
-
-
-
