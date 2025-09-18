@@ -135,11 +135,17 @@ public class CheckoutSolution {
     			break;
     		case 'S':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 20;
+    			//sum += quantity * 20;
+    			div = quantity / 3;
+                mod = quantity % 3;
+    			sum += Math.min(quantity * 20, div * 45 + mod * 20);
     			break;
     		case 'T':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 20;
+    			//sum += quantity * 20;
+    			div = quantity / 3;
+                mod = quantity % 3;
+    			sum += Math.min(quantity * 20, div * 45 + mod * 20);
     			break;
     		case 'U':
     			quantity = (int) entry.getValue();
@@ -163,22 +169,31 @@ public class CheckoutSolution {
     			break;
     		case 'X':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 17;
+    			//sum += quantity * 17;
+    			div = quantity / 3;
+                mod = quantity % 3;
+    			sum += Math.min(quantity * 17, div * 45 + mod * 17);
     			break;
     		case 'Y':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 20;
+    			//sum += quantity * 20;
+    			div = quantity / 3;
+                mod = quantity % 3;
+    			sum += Math.min(quantity * 20, div * 45 + mod * 20);
     			break;
     		case 'Z':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 21;
+    			//sum += quantity * 21;
+    			div = quantity / 3;
+                mod = quantity % 3;
+    			sum += Math.min(quantity * 21, div * 45 + mod * 21);
     			break;
     		default:
     			return -1;
     		}
     	}
     	sum += sumB+sumM+sumQ;
-    	sum = recalculateSTXYZ(map, sum);
+    	//sum = recalculateSTXYZ(map, sum);
     	System.out.println(sum);
     	return sum;
     }
@@ -193,9 +208,9 @@ public class CheckoutSolution {
 		
     	for (Character ch: newMap.keySet()) {
     			for (Character ch1: newMap.keySet()) {
-        			//if (ch1 == ch) continue;
+        			if (ch1 == ch) continue;
         				for (Character ch2: newMap.keySet()) {
-            				//if (ch1 == ch2 || ch2 == ch) continue;
+            				if (ch1 == ch2 || ch2 == ch) continue;
             				int cnt1 = newMap.get(ch);
             				int cnt2 = newMap.get(ch1);
             				int cnt3 = newMap.get(ch2);	
@@ -282,12 +297,6 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("S");
+		new CheckoutSolution().checkout("KKKK");
 	}
 }
-
-
-
-
-
-
