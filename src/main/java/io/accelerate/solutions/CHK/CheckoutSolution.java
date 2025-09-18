@@ -144,8 +144,8 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			div = quantity/4;
     			mod = quantity%4;
-    			sum += div*3*50;
-    			sum += mod*50;
+    			sum += div*3*40;
+    			sum += mod*40;
     			break;
     		case 'V':
     			quantity = (int) entry.getValue();
@@ -238,6 +238,7 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("FFFF");
+		new CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	}
 }
+
