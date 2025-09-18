@@ -194,9 +194,11 @@ public class CheckoutSolution {
     		sumQ -= divQ*80;
     	}
     	if (quantityQ%3 == 0) {
+    		sumQ -= 20;
+    	} else if (quantityQ%3 == 1) {
     		sumQ -= 50;
     	} else {
-    		sumQ -= 30;
+    		sumQ -= 80;
     	}
     	
     	return sumQ;
@@ -241,5 +243,6 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("PPPPQRUVPQRUVPQRUVSU");
 	}
 }
+
 
 
