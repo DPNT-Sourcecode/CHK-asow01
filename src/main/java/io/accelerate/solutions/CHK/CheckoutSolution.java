@@ -104,7 +104,7 @@ public class CheckoutSolution {
     			mod = quantity%3;
     			//quantityB = map.getOrDefault('B', 0);
     			int freeMEligible = div;
-    			sumB = removeMfromSum(freeMEligible, quantityM, sumM);
+    			sumM = removeMfromSum(freeMEligible, quantityM, sumM);
     			break;
     		case 'O':
     			quantity = (int) entry.getValue();
@@ -128,7 +128,7 @@ public class CheckoutSolution {
     			mod = quantity%3;
     			//quantityB = map.getOrDefault('B', 0);
     			int freeQEligible = div;
-    			sumB = removeBfromSum(freeQEligible, quantityQ, sumQ);
+    			sumQ = removeQfromSum(freeQEligible, quantityQ, sumQ);
     			sum += quantity * 50;
     			break;
     		case 'S':
@@ -179,7 +179,29 @@ public class CheckoutSolution {
     	return sum + sumB + sumM + sumQ;
     }
     
-    private int removeMfromSum(int freeMEligible, int quantityM, int sumM) {
+    private int removeQfromSum(int freeQEligible, int quantityQ, int sumQ) {
+    	if (freeQEligible >= quantityQ) {
+    		return 0;
+    	}
+    	if (freeQEligible == 0) {
+    		return sumQ;
+    	}
+    	int actualFreeQ = Math.min(quantityQ, freeQEligible);
+    	int divQ = actualFreeQ/3;
+    	int modQ = actualFreeQ % 3;
+    	if (divQ > 1) {
+    		sumQ -= divQ*80;
+    	}
+    	if (quantityQ%3 == 0) {
+    		sumQ -= 15;
+    	} else {
+    		sumQ -= 30;
+    	}
+    	
+    	return sumQ;
+	}
+
+	private int removeMfromSum(int freeMEligible, int quantityM, int sumM) {
     	if (freeMEligible >= quantityM) {
     		return 0;
     	}
@@ -218,6 +240,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
 
 
