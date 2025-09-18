@@ -133,7 +133,7 @@ public class CheckoutSolution {
     			sumQ = removeQfromSum(freeQEligible, quantityQ, sumQ);
     			sum += quantity * 50;
     			break;
-    		case 'S':
+    		/*case 'S':
     			quantity = (int) entry.getValue();
     			//sum += quantity * 20;
     			div = quantity / 3;
@@ -146,7 +146,7 @@ public class CheckoutSolution {
     			div = quantity / 3;
                 mod = quantity % 3;
     			sum += Math.min(quantity * 20, div * 45 + mod * 20);
-    			break;
+    			break;*/
     		case 'U':
     			quantity = (int) entry.getValue();
     			div = quantity/4;
@@ -174,7 +174,7 @@ public class CheckoutSolution {
                 mod = quantity % 3;
     			sum += Math.min(quantity * 17, div * 45 + mod * 17);
     			break;
-    		case 'Y':
+    		/*case 'Y':
     			quantity = (int) entry.getValue();
     			//sum += quantity * 20;
     			div = quantity / 3;
@@ -187,7 +187,7 @@ public class CheckoutSolution {
     			div = quantity / 3;
                 mod = quantity % 3;
     			sum += Math.min(quantity * 21, div * 45 + mod * 21);
-    			break;
+    			break;*/
     		default:
     			return -1;
     		}
@@ -300,5 +300,6 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("SSSZ");
 	}
 }
+
 
 
