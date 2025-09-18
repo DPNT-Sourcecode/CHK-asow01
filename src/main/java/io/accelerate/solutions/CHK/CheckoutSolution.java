@@ -57,7 +57,7 @@ public class CheckoutSolution {
     			return -1;
     		}
     	}
-    	System.out.println(sum+sumB);
+    	//System.out.println(sum+sumB);
     	return sum + sumB;
     }
     
@@ -66,12 +66,12 @@ public class CheckoutSolution {
     	int divB = actualFreeB/2;
     	int modB = actualFreeB % 2;
     	sumB -= divB*45;
-    	sumB -= modB*30;
+    	if (modB>0) {
+    		sumB -= modB*30;
+    	}
     	return sumB;
     }
     
-    public static void main(String[] args) {
-		new CheckoutSolution().checkout("ABCDEABCDE");
-	}
 }
+
 
