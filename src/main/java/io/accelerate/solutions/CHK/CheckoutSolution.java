@@ -46,7 +46,7 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			div = quantity/2;
     			mod = quantity%2;
-    			int quantityB = map.get('B');
+    			int quantityB = map.getOrDefault('B', 0);
     			if (div >= quantityB) {
     				sumB -= div*30;
     			}
@@ -59,6 +59,7 @@ public class CheckoutSolution {
     	return sum + sumB;
     }
 }
+
 
 
 
