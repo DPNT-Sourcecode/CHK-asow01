@@ -68,7 +68,9 @@ public class CheckoutSolution {
     	int actualFreeB = Math.min(quantityB, freeBEligible);
     	int divB = actualFreeB/2;
     	int modB = actualFreeB % 2;
-    	sumB -= divB*45;
+    	if (divB > 1) {
+    		sumB -= divB*45;
+    	}
     	if (quantityB%2 == 0) {
     		sumB -= 15;
     	} else {
@@ -79,9 +81,10 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("ABCDEABCDE");
+		new CheckoutSolution().checkout("ABCDE");
 	}
 }
+
 
 
 
