@@ -124,6 +124,11 @@ public class CheckoutSolution {
     			break;
     		case 'R':
     			quantity = (int) entry.getValue();
+    			div = quantity/3;
+    			mod = quantity%3;
+    			//quantityB = map.getOrDefault('B', 0);
+    			int freeQEligible = div;
+    			sumB = removeBfromSum(freeQEligible, quantityQ, sumQ);
     			sum += quantity * 50;
     			break;
     		case 'S':
@@ -213,6 +218,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
 
 
