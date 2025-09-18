@@ -63,7 +63,7 @@ public class CheckoutSolution {
     
     public int removeBfromSum(int freeBEligible, int quantityB, int sumB) {
     	if (freeBEligible >= quantityB) {
-    		return sumB;
+    		return 0;
     	}
     	int actualFreeB = Math.min(quantityB, freeBEligible);
     	int divB = actualFreeB/2;
@@ -79,9 +79,10 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("EEEB");
+		new CheckoutSolution().checkout("ABCDEABCDE");
 	}
 }
+
 
 
 
