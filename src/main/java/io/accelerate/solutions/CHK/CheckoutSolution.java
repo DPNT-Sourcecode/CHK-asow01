@@ -177,11 +177,53 @@ public class CheckoutSolution {
     			return -1;
     		}
     	}
-    	System.out.println(sum+sumB+sumM+sumQ);
-    	return sum + sumB + sumM + sumQ;
+    	sum += sumB+sumM+sumQ;
+    	sum = recalculateSTXYZ(map, sum);
+    	System.out.println(sum);
+    	return sum;
     }
     
-    private int removeQfromSum(int freeQEligible, int quantityQ, int sumQ) {
+    private int recalculateSTXYZ(HashMap<Character, Integer> map, int sum) {
+    	HashMap<Character, Integer> newMap = new HashMap<Character, Integer>();
+    	newMap.put('S', map.getOrDefault('S', 0));
+    	newMap.put('T', map.getOrDefault('T', 0));
+    	newMap.put('X', map.getOrDefault('X', 0));
+    	newMap.put('Y', map.getOrDefault('Y', 0));
+    	newMap.put('Z', map.getOrDefault('Z', 0));
+		
+    	for (Character ch: newMap.keySet()) {
+    			for (Character ch1: newMap.keySet()) {
+        			if (ch1 == ch) continue;
+        				for (Character ch2: newMap.keySet()) {
+            				if (ch1 == ch2 || ch2 == ch) continue;
+            				int cnt1 = newMap.get(ch);
+            				int cnt2 = newMap.get(ch1);
+            				int cnt3 = newMap.get(ch2);	
+            				if (cnt1 > 0 && cnt2 > 0 && cnt3 > 0) {
+            					sum = reduceCharVal(ch, sum);
+            					sum = reduceCharVal(ch1, sum);
+            					sum = reduceCharVal(ch2, sum);
+            					sum += 45;
+            					newMap.put(ch, Math.max(cnt1-1, 0));
+            					newMap.put(ch1, Math.max(cnt2-1, 0));
+            					newMap.put(ch2, Math.max(cnt3-1, 0));
+            				}
+            			}
+        			}    		
+    	}
+    	return sum;
+	}
+
+	private int reduceCharVal(Character ch, int sum) {
+		if (ch == 'S') sum -= 30;
+		if (ch == 'T') sum -= 20;
+		if (ch == 'X') sum -= 90;
+		if (ch == 'Y') sum -= 10;
+		if (ch == 'Z') sum -= 50;
+		return sum;
+	}
+
+	private int removeQfromSum(int freeQEligible, int quantityQ, int sumQ) {
     	if (freeQEligible >= quantityQ) {
     		return 0;
     	}
@@ -236,12 +278,10 @@ public class CheckoutSolution {
     	} else {
     		sumB -= 30;
     	}
-    	
     	return sumB;
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("PPPPQRUVPQRUVPQRUVSU");
+		new CheckoutSolution().checkout("SSSTTX");
 	}
 }
-
