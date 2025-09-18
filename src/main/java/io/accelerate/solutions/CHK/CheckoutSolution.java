@@ -297,7 +297,8 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("KKKK");
+		new CheckoutSolution().checkout("SSSZ");
 	}
 }
+
 
