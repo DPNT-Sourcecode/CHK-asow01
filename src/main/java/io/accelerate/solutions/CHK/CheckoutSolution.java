@@ -69,19 +69,20 @@ public class CheckoutSolution {
     	int divB = actualFreeB/2;
     	int modB = actualFreeB % 2;
     	sumB -= divB*45;
-    	if (divB > 1) {
-    		sumB -= 30;
-    	} else {
+    	if (quantityB%2 == 0) {
     		sumB -= 15;
+    	} else {
+    		sumB -= 30;
     	}
     	
     	return sumB;
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("EEBBB");
+		new CheckoutSolution().checkout("EEEB");
 	}
 }
+
 
 
 
