@@ -89,7 +89,7 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			div = quantity/2;
     			mod = quantity%2;
-    			sum += div*150 + mod*80;
+    			sum += div*150 + mod*70;
     			break;
     		case 'L':
     			quantity = (int) entry.getValue();
@@ -285,3 +285,4 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("SSSTTX");
 	}
 }
+
