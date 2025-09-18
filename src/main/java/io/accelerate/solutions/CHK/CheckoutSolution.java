@@ -59,6 +59,7 @@ public class CheckoutSolution {
     			mod = quantity%3;
     			sum += div*2*10;
     			sum += mod*10;
+    			break;
     		default:
     			return -1;
     		}
@@ -90,7 +91,8 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("FF");
+		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
