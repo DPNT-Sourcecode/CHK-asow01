@@ -53,6 +53,12 @@ public class CheckoutSolution {
     			
     			sum += quantity * 40;
     			break;
+    		case 'F':
+    			quantity = (int) entry.getValue();
+    			div = quantity/3;
+    			mod = quantity%3;
+    			sum += div*2*10;
+    			sum += mod*10;
     		default:
     			return -1;
     		}
@@ -84,6 +90,7 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("EEBBB");
+		new CheckoutSolution().checkout("FF");
 	}
 }
+
