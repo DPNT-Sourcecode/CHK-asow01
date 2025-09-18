@@ -74,7 +74,8 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("EEBB");
+		new CheckoutSolution().checkout("EEBBB");
 	}
 }
+
 
