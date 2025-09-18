@@ -39,12 +39,13 @@ public class CheckoutSolution {
     			sum += quantity * 15;
     			break;
     		default:
-    			throw new SolutionNotImplementedException(); 
+    			sum += 0; 
     		}
     	}
     	return sum;
     }
 }
+
 
 
 
