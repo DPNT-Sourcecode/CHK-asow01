@@ -57,7 +57,7 @@ public class CheckoutSolution {
     			return -1;
     		}
     	}
-    	//System.out.println(sum+sumB);
+    	System.out.println(sum+sumB);
     	return sum + sumB;
     }
     
@@ -70,4 +70,8 @@ public class CheckoutSolution {
     	return sumB;
     }
     
+    public static void main(String[] args) {
+		new CheckoutSolution().checkout("ABCDEABCDE");
+	}
 }
+
