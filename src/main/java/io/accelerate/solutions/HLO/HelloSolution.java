@@ -4,6 +4,13 @@ import io.accelerate.runner.SolutionNotImplementedException;
 
 public class HelloSolution {
     public String hello(String friendName) {
-        throw new SolutionNotImplementedException();
+    	if (!friendName.isEmpty() && !friendName.isBlank()) {
+    		StringBuffer sb = new StringBuffer();
+        	sb.append("Hello ");
+        	sb.append(friendName);
+        	return sb.toString();
+    	} else {
+    		throw new SolutionNotImplementedException();
+    	}        
     }
 }
