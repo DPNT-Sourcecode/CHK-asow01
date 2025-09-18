@@ -105,6 +105,7 @@ public class CheckoutSolution {
     			//quantityB = map.getOrDefault('B', 0);
     			int freeMEligible = div;
     			sumM = removeMfromSum(freeMEligible, quantityM, sumM);
+    			sum += quantity * 40;
     			break;
     		case 'O':
     			quantity = (int) entry.getValue();
@@ -240,9 +241,3 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
-
-
-
-
-
-
