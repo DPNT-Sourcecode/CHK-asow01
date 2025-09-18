@@ -14,6 +14,7 @@ public class CheckoutSolution {
     		map.put(c, map.getOrDefault(c, 0)+1);
     	}
     	int sum = 0;
+    	int sumB = 0;
     	int quantity, div, mod;
     	for(Map.Entry entry: map.entrySet()) {
     		char item = (char) entry.getKey();
@@ -31,7 +32,7 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			div = quantity/2;
     			mod = quantity%2;
-    			sum += div*45 + mod*30;
+    			sumB += div*45 + mod*30;
     			break;
     		case 'C':
     			quantity = (int) entry.getValue();
@@ -43,14 +44,21 @@ public class CheckoutSolution {
     			break;
     		case 'E':
     			quantity = (int) entry.getValue();
+    			div = quantity/2;
+    			mod = quantity%2;
+    			int quantityB = map.get('B');
+    			if (div >= quantityB) {
+    				sumB -= div*30;
+    			}
     			sum += quantity * 40;
     			break;
     		default:
     			return -1;
     		}
     	}
-    	return sum;
+    	return sum + sumB;
     }
 }
+
 
 
