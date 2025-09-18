@@ -197,7 +197,7 @@ public class CheckoutSolution {
     	if (quantityQ%3 == 0) {
     		sumQ -= 20;
     	} else if (quantityQ%3 == 1) {
-    		sumQ -= 50;
+    		sumQ -= 30;
     	} else {
     		sumQ -= 80;
     	}
@@ -241,6 +241,7 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH");
+		new CheckoutSolution().checkout("PPPPQRUVPQRUVPQRUVSU");
 	}
 }
+
