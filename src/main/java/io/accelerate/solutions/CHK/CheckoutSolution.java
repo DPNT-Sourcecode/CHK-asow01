@@ -60,6 +60,78 @@ public class CheckoutSolution {
     			sum += div*2*10;
     			sum += mod*10;
     			break;
+    		case 'G':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 20;
+    			break;
+    		case 'H':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'I':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 35;
+    			break;
+    		case 'J':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 60;
+    			break;
+    		case 'K':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'L':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 90;
+    			break;
+    		case 'M':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 15;
+    			break;
+    		case 'N':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'O':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 10;
+    			break;
+    		case 'P':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'Q':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'R':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'S':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 30;
+    			break;
+    		case 'T':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 20;
+    			break;
+    		case 'U':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'V':
+    			quantity = (int) entry.getValue();
+    			break;
+    		case 'W':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 20;
+    			break;
+    		case 'X':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 90;
+    			break;
+    		case 'Y':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 10;
+    			break;
+    		case 'Z':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 50;
+    			break;
     		default:
     			return -1;
     		}
@@ -94,5 +166,6 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
 
