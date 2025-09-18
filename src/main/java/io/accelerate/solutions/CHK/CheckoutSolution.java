@@ -16,7 +16,7 @@ public class CheckoutSolution {
     	int sum = 0;
     	int sumB = 0;
     	int quantity, div, mod;
-    	int quantityB, divB, modB;
+    	int quantityB = 0, divB, modB;
     	for(Map.Entry entry: map.entrySet()) {
     		char item = (char) entry.getKey();
     		switch (item) {
@@ -47,17 +47,27 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			div = quantity/2;
     			mod = quantity%2;
-    			quantityB = map.getOrDefault('B', 0);
-    			if (div >= quantityB && quantityB > 0) {
-    				sumB -= div*30;
-    			}
+    			//quantityB = map.getOrDefault('B', 0);
+    			int freeBEligible = div;
+    			sumB = removeBfromSum(freeBEligible, quantityB, sumB);
+    			
     			sum += quantity * 40;
     			break;
     		default:
     			return -1;
     		}
     	}
+    	//System.out.println(sum+sumB);
     	return sum + sumB;
     }
+    
+    public int removeBfromSum(int freeBEligible, int quantityB, int sumB) {
+    	int actualFreeB = Math.min(quantityB, freeBEligible);
+    	int divB = actualFreeB/2;
+    	int modB = actualFreeB % 2;
+    	sumB -= divB*45;
+    	sumB -= modB*30;
+    	return sumB;
+    }
+    
 }
-
