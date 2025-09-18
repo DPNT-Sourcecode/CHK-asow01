@@ -115,6 +115,12 @@ public class CheckoutSolution {
     			break;
     		case 'V':
     			quantity = (int) entry.getValue();
+    			div = quantity/3;
+    			sum += div*130;
+    			quantity -= div*3;
+    			div = quantity/2;
+    			mod = quantity%2;
+    			sum += div*90 + mod*50;
     			break;
     		case 'W':
     			quantity = (int) entry.getValue();
@@ -166,6 +172,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
 
 
