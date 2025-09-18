@@ -16,9 +16,11 @@ public class CheckoutSolution {
     	int sum = 0;
     	int sumB = 0;
     	int sumM = 0;
+    	int sumQ = 0;
     	int quantity, div, mod;
     	int quantityB = 0, divB, modB;
     	int quantityM = 0;
+    	int quantityQ = 0, divQ, modQ;
     	for(Map.Entry entry: map.entrySet()) {
     		char item = (char) entry.getKey();
     		switch (item) {
@@ -115,13 +117,14 @@ public class CheckoutSolution {
     			sum += div*200 + mod*50;
     			break;
     		case 'Q':
-    			quantity = (int) entry.getValue();
-    			div = quantity/3;
-    			mod = quantity%3;
-    			sum += div*80 + mod*30;
+    			quantityQ = (int) entry.getValue();
+    			divQ = quantityQ/3;
+    			modQ = quantityQ%3;
+    			sumQ += divQ*80 + modQ*30;
     			break;
     		case 'R':
     			quantity = (int) entry.getValue();
+    			sum += quantity * 50;
     			break;
     		case 'S':
     			quantity = (int) entry.getValue();
@@ -167,8 +170,8 @@ public class CheckoutSolution {
     			return -1;
     		}
     	}
-    	System.out.println(sum+sumB);
-    	return sum + sumB;
+    	System.out.println(sum+sumB+sumM+sumQ);
+    	return sum + sumB + sumM + sumQ;
     }
     
     private int removeMfromSum(int freeMEligible, int quantityM, int sumM) {
@@ -210,5 +213,6 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
 
