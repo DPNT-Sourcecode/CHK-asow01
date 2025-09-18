@@ -66,8 +66,10 @@ public class CheckoutSolution {
     	int divB = actualFreeB/2;
     	int modB = actualFreeB % 2;
     	sumB -= divB*45;
-    	if (modB>0) {
+    	if (divB>0 && modB>0) {
     		sumB -= 15;
+    	} else {
+    		sumB-= 30;
     	}
     	return sumB;
     }
@@ -76,6 +78,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("ABCDEABCDE");
 	}
 }
+
 
 
 
