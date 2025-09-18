@@ -136,20 +136,6 @@ public class CheckoutSolution {
     			sumQ = removeQfromSum(freeQEligible, quantityQ, sumQ);
     			sum += quantity * 50;
     			break;
-    		/*case 'S':
-    			quantity = (int) entry.getValue();
-    			//sum += quantity * 20;
-    			div = quantity / 3;
-                mod = quantity % 3;
-    			sum += Math.min(quantity * 20, div * 45 + mod * 20);
-    			break;
-    		case 'T':
-    			quantity = (int) entry.getValue();
-    			//sum += quantity * 20;
-    			div = quantity / 3;
-                mod = quantity % 3;
-    			sum += Math.min(quantity * 20, div * 45 + mod * 20);
-    			break;*/
     		case 'U':
     			quantity = (int) entry.getValue();
     			div = quantity/4;
@@ -170,27 +156,6 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			sum += quantity * 20;
     			break;
-    		/*case 'X':
-    			quantity = (int) entry.getValue();
-    			//sum += quantity * 17;
-    			div = quantity / 3;
-                mod = quantity % 3;
-    			sum += Math.min(quantity * 17, div * 45 + mod * 17);
-    			break;
-    		case 'Y':
-    			quantity = (int) entry.getValue();
-    			//sum += quantity * 20;
-    			div = quantity / 3;
-                mod = quantity % 3;
-    			sum += Math.min(quantity * 20, div * 45 + mod * 20);
-    			break;
-    		case 'Z':
-    			quantity = (int) entry.getValue();
-    			//sum += quantity * 21;
-    			div = quantity / 3;
-                mod = quantity % 3;
-    			sum += Math.min(quantity * 21, div * 45 + mod * 21);
-    			break;*/
     		case 'S':
     			break;
     		case 'T':
@@ -246,15 +211,6 @@ public class CheckoutSolution {
     	}
 
     	return total;
-	}
-
-	private int reduceCharVal(Character ch, int sum) {
-		if (ch == 'S') sum -= 20;
-		if (ch == 'T') sum -= 20;
-		if (ch == 'X') sum -= 17;
-		if (ch == 'Y') sum -= 20;
-		if (ch == 'Z') sum -= 21;
-		return sum;
 	}
 
 	private int removeQfromSum(int freeQEligible, int quantityQ, int sumQ) {
