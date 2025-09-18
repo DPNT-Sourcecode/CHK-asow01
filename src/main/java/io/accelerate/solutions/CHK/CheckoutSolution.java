@@ -39,13 +39,9 @@ public class CheckoutSolution {
     			sum += quantity * 15;
     			break;
     		default:
-    			sum += 0; 
+    			return -1;
     		}
     	}
     	return sum;
     }
 }
-
-
-
-
