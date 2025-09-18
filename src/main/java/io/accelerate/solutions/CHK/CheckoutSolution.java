@@ -172,8 +172,16 @@ public class CheckoutSolution {
     }
     
     private int removeMfromSum(int freeMEligible, int quantityM, int sumM) {
-		// TODO Auto-generated method stub
-		return 0;
+    	if (freeMEligible >= quantityM) {
+    		return 0;
+    	}
+    	if (freeMEligible == 0) {
+    		return sumM;
+    	}
+    	int actualFreeB = Math.min(quantityM, freeMEligible);
+    	sumM -= actualFreeB * 15;
+    	
+    	return sumM;
 	}
 
 	public int removeBfromSum(int freeBEligible, int quantityB, int sumB) {
@@ -202,4 +210,5 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
