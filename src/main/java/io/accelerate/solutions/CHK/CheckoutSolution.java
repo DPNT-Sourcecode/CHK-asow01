@@ -15,8 +15,10 @@ public class CheckoutSolution {
     	}
     	int sum = 0;
     	int sumB = 0;
+    	int sumM = 0;
     	int quantity, div, mod;
     	int quantityB = 0, divB, modB;
+    	int quantityM = 0;
     	for(Map.Entry entry: map.entrySet()) {
     		char item = (char) entry.getKey();
     		switch (item) {
@@ -92,8 +94,8 @@ public class CheckoutSolution {
     			sum += quantity * 90;
     			break;
     		case 'M':
-    			quantity = (int) entry.getValue();
-    			sum += quantity * 15;
+    			quantityM = (int) entry.getValue();
+    			sumM += quantity * 15;
     			break;
     		case 'N':
     			quantity = (int) entry.getValue();
@@ -104,9 +106,15 @@ public class CheckoutSolution {
     			break;
     		case 'P':
     			quantity = (int) entry.getValue();
+    			div = quantity/5;
+    			mod = quantity%5;
+    			sum += div*200 + mod*50;
     			break;
     		case 'Q':
     			quantity = (int) entry.getValue();
+    			div = quantity/3;
+    			mod = quantity%3;
+    			sum += div*80 + mod*30;
     			break;
     		case 'R':
     			quantity = (int) entry.getValue();
@@ -185,8 +193,3 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
-
-
-
-
-
