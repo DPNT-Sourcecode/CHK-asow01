@@ -238,7 +238,8 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		new CheckoutSolution().checkout("PPPPQRUVPQRUVPQRUVSU");
 	}
 }
+
 
