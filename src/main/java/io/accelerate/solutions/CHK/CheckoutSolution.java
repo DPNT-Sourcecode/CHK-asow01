@@ -135,7 +135,7 @@ public class CheckoutSolution {
     			break;
     		case 'S':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 30;
+    			sum += quantity * 20;
     			break;
     		case 'T':
     			quantity = (int) entry.getValue();
@@ -163,15 +163,15 @@ public class CheckoutSolution {
     			break;
     		case 'X':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 90;
+    			sum += quantity * 17;
     			break;
     		case 'Y':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 10;
+    			sum += quantity * 20;
     			break;
     		case 'Z':
     			quantity = (int) entry.getValue();
-    			sum += quantity * 50;
+    			sum += quantity * 21;
     			break;
     		default:
     			return -1;
@@ -215,11 +215,11 @@ public class CheckoutSolution {
 	}
 
 	private int reduceCharVal(Character ch, int sum) {
-		if (ch == 'S') sum -= 30;
+		if (ch == 'S') sum -= 20;
 		if (ch == 'T') sum -= 20;
-		if (ch == 'X') sum -= 90;
-		if (ch == 'Y') sum -= 10;
-		if (ch == 'Z') sum -= 50;
+		if (ch == 'X') sum -= 17;
+		if (ch == 'Y') sum -= 20;
+		if (ch == 'Z') sum -= 21;
 		return sum;
 	}
 
@@ -282,7 +282,8 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("SSSTTX");
+		new CheckoutSolution().checkout("K");
 	}
 }
+
 
