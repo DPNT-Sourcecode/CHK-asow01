@@ -21,6 +21,7 @@ public class CheckoutSolution {
     	int quantityB = 0, divB, modB;
     	int quantityM = 0;
     	int quantityQ = 0, divQ, modQ;
+    	System.out.println(map);
     	for(Map.Entry entry: map.entrySet()) {
     		char item = (char) entry.getKey();
     		switch (item) {
@@ -240,9 +241,10 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("PPPPQRUVPQRUVPQRUVSU");
+		new CheckoutSolution().checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH");
 	}
 }
+
 
 
 
