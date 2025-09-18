@@ -38,6 +38,10 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			sum += quantity * 15;
     			break;
+    		case 'E':
+    			quantity = (int) entry.getValue();
+    			sum += quantity * 40;
+    			break;
     		default:
     			return -1;
     		}
@@ -45,3 +49,4 @@ public class CheckoutSolution {
     	return sum;
     }
 }
+
