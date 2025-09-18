@@ -193,9 +193,9 @@ public class CheckoutSolution {
 		
     	for (Character ch: newMap.keySet()) {
     			for (Character ch1: newMap.keySet()) {
-        			if (ch1 == ch) continue;
+        			//if (ch1 == ch) continue;
         				for (Character ch2: newMap.keySet()) {
-            				if (ch1 == ch2 || ch2 == ch) continue;
+            				//if (ch1 == ch2 || ch2 == ch) continue;
             				int cnt1 = newMap.get(ch);
             				int cnt2 = newMap.get(ch1);
             				int cnt3 = newMap.get(ch2);	
@@ -282,9 +282,10 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("KKKK");
+		new CheckoutSolution().checkout("SSS");
 	}
 }
+
 
 
 
