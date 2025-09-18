@@ -1,6 +1,9 @@
 package io.accelerate.solutions.CHK;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -193,12 +196,13 @@ public class CheckoutSolution {
     		}
     	}
     	sum += sumB+sumM+sumQ;
-    	sum = recalculateSTXYZ(map, sum);
+    	sum += recalculateSTXYZ(map);
     	System.out.println(sum);
     	return sum;
     }
     
-    private int recalculateSTXYZ(HashMap<Character, Integer> map, int sum) {
+    private int recalculateSTXYZ(HashMap<Character, Integer> map) {
+    	List<Character> GROUP_ITEMS = Arrays.asList('S','T','X','Y','Z');
     	HashMap<Character, Integer> newMap = new HashMap<Character, Integer>();
     	newMap.put('S', map.getOrDefault('S', 0));
     	newMap.put('T', map.getOrDefault('T', 0));
@@ -206,27 +210,32 @@ public class CheckoutSolution {
     	newMap.put('Y', map.getOrDefault('Y', 0));
     	newMap.put('Z', map.getOrDefault('Z', 0));
 		
-    	for (Character ch: newMap.keySet()) {
-    			for (Character ch1: newMap.keySet()) {
-        			if (ch1 == ch) continue;
-        				for (Character ch2: newMap.keySet()) {
-            				if (ch1 == ch2 || ch2 == ch) continue;
-            				int cnt1 = newMap.get(ch);
-            				int cnt2 = newMap.get(ch1);
-            				int cnt3 = newMap.get(ch2);	
-            				if (cnt1 > 0 && cnt2 > 0 && cnt3 > 0) {
-            					sum = reduceCharVal(ch, sum);
-            					sum = reduceCharVal(ch1, sum);
-            					sum = reduceCharVal(ch2, sum);
-            					sum += 45;
-            					newMap.put(ch, Math.max(cnt1-1, 0));
-            					newMap.put(ch1, Math.max(cnt2-1, 0));
-            					newMap.put(ch2, Math.max(cnt3-1, 0));
-            				}
-            			}
-        			}    		
+    	HashMap<Character, Integer> prices = new HashMap<Character, Integer>();
+    	prices.put('S', 20);
+    	prices.put('T', 20);
+    	prices.put('X', 17);
+    	prices.put('Y', 20);
+    	prices.put('Z', 21);
+    	
+    	List<Character> groupList = new ArrayList<>();
+    	int total = 0;
+    	for (char c : GROUP_ITEMS) {
+    	    int qty = newMap.getOrDefault(c, 0);
+    	    for (int i = 0; i < qty; i++) groupList.add(c);
+    	    newMap.put(c, 0);
     	}
-    	return sum;
+
+    	groupList.sort((a,b)->prices.get(b)-prices.get(a));
+
+    	int fullGroups = groupList.size() / 3;
+    	int leftoverStart = fullGroups * 3;
+
+    	total += fullGroups * 45;
+    	for (int i = leftoverStart; i < groupList.size(); i++) {
+    	    total += prices.get(groupList.get(i));
+    	}
+
+    	return total;
 	}
 
 	private int reduceCharVal(Character ch, int sum) {
@@ -300,6 +309,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("SSSZ");
 	}
 }
+
 
 
 
