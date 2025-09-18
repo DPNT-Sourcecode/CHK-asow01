@@ -20,6 +20,9 @@ public class CheckoutSolution {
     		switch (item) {
     		case 'A':
     			quantity = (int) entry.getValue();
+    			div = quantity/5;
+    			sum += div*200;
+    			quantity -= div*5;
     			div = quantity/3;
     			mod = quantity%3;
     			sum += div*130 + mod*50;
@@ -49,4 +52,5 @@ public class CheckoutSolution {
     	return sum;
     }
 }
+
 
