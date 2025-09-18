@@ -49,7 +49,7 @@ public class CheckoutSolution {
     			mod = quantity%2;
     			//quantityB = map.getOrDefault('B', 0);
     			int freeBEligible = div;
-    			sumB -= removeBfromSum(freeBEligible, quantityB, sumB);
+    			sumB = removeBfromSum(freeBEligible, quantityB, sumB);
     			
     			sum += quantity * 40;
     			break;
@@ -69,7 +69,7 @@ public class CheckoutSolution {
     	int divB = actualFreeB/2;
     	int modB = actualFreeB % 2;
     	sumB -= divB*45;
-    	if (modB == 1) {
+    	if (divB > 1) {
     		sumB -= 30;
     	} else {
     		sumB -= 15;
@@ -82,6 +82,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("EEBBB");
 	}
 }
+
 
 
 
