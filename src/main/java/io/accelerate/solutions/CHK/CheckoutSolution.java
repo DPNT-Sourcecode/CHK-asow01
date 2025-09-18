@@ -170,14 +170,14 @@ public class CheckoutSolution {
     			quantity = (int) entry.getValue();
     			sum += quantity * 20;
     			break;
-    		case 'X':
+    		/*case 'X':
     			quantity = (int) entry.getValue();
     			//sum += quantity * 17;
     			div = quantity / 3;
                 mod = quantity % 3;
     			sum += Math.min(quantity * 17, div * 45 + mod * 17);
     			break;
-    		/*case 'Y':
+    		case 'Y':
     			quantity = (int) entry.getValue();
     			//sum += quantity * 20;
     			div = quantity / 3;
@@ -191,6 +191,16 @@ public class CheckoutSolution {
                 mod = quantity % 3;
     			sum += Math.min(quantity * 21, div * 45 + mod * 21);
     			break;*/
+    		case 'S':
+    			break;
+    		case 'T':
+    			break;
+    		case 'X':
+    			break;
+    		case 'Y':
+    			break;
+    		case 'Z':
+    			break;
     		default:
     			return -1;
     		}
@@ -306,10 +316,6 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("SSSZ");
+		new CheckoutSolution().checkout("STXZ");
 	}
 }
-
-
-
-
