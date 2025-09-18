@@ -87,12 +87,3 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("EEBBB");
 	}
 }
-
-
-
-
-
-
-
-
-
