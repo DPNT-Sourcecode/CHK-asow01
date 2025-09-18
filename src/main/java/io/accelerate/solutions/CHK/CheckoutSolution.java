@@ -66,6 +66,12 @@ public class CheckoutSolution {
     			break;
     		case 'H':
     			quantity = (int) entry.getValue();
+    			div = quantity/10;
+    			sum += div*80;
+    			quantity -= div*10;
+    			div = quantity/5;
+    			mod = quantity%5;
+    			sum += div*45 + mod*10;
     			break;
     		case 'I':
     			quantity = (int) entry.getValue();
@@ -77,6 +83,9 @@ public class CheckoutSolution {
     			break;
     		case 'K':
     			quantity = (int) entry.getValue();
+    			div = quantity/2;
+    			mod = quantity%2;
+    			sum += div*150 + mod*80;
     			break;
     		case 'L':
     			quantity = (int) entry.getValue();
@@ -112,6 +121,10 @@ public class CheckoutSolution {
     			break;
     		case 'U':
     			quantity = (int) entry.getValue();
+    			div = quantity/4;
+    			mod = quantity%4;
+    			sum += div*3*50;
+    			sum += mod*50;
     			break;
     		case 'V':
     			quantity = (int) entry.getValue();
@@ -172,6 +185,7 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("FFFF");
 	}
 }
+
 
 
 
