@@ -65,6 +65,9 @@ public class CheckoutSolution {
     	if (freeBEligible >= quantityB) {
     		return 0;
     	}
+    	if (freeBEligible == 0) {
+    		return sumB;
+    	}
     	int actualFreeB = Math.min(quantityB, freeBEligible);
     	int divB = actualFreeB/2;
     	int modB = actualFreeB % 2;
@@ -81,9 +84,10 @@ public class CheckoutSolution {
     }
     
     public static void main(String[] args) {
-		new CheckoutSolution().checkout("ABCDE");
+		new CheckoutSolution().checkout("EEBBB");
 	}
 }
+
 
 
 
