@@ -193,7 +193,7 @@ public class CheckoutSolution {
     		}
     	}
     	sum += sumB+sumM+sumQ;
-    	//sum = recalculateSTXYZ(map, sum);
+    	sum = recalculateSTXYZ(map, sum);
     	System.out.println(sum);
     	return sum;
     }
@@ -300,3 +300,4 @@ public class CheckoutSolution {
 		new CheckoutSolution().checkout("KKKK");
 	}
 }
+
